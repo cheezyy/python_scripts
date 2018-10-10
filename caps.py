@@ -28,25 +28,45 @@ if os.path.isdir(path):
 
         # subfolder
         if os.path.isdir(folderpath):
-            for subfolder in os.listdir(folderpath):
-                subfolderpath = os.path.join(str(folderpath), str(subfolder))
+            for sub1folder in os.listdir(folderpath):
+                sub1folderpath = os.path.join(str(folderpath), str(sub1folder))
                 
                 # subsubfolder
-                if os.path.isdir(subfolderpath):
-                    #print(os.listdir(subfolderpath))
-                    for subsubfolder in os.listdir(subfolderpath):
-                        subsubfolderpath = os.path.join(str(subfolderpath), str(subsubfolder))
+                if os.path.isdir(sub1folderpath):
+                    #print(os.listdir(sub1folderpath))
+                    for sub2folder in os.listdir(sub1folderpath):
+                        sub2folderpath = os.path.join(str(sub1folderpath), str(sub2folder))
 
-                        #if os.path.isdir(subsubfolderpath):
-                            #print(os.listdir(subsubfolderpath))
+                        # subsubsubfolder
+                        if os.path.isdir(sub2folderpath):
+                            #print(os.listdir(sub2folderpath))
+                            for sub3folder in os.listdir(sub2folderpath):
+                                sub3folderpath = os.path.join(str(sub2folderpath), str(sub3folder))
 
-                        if os.path.isfile(subsubfolderpath):
+                                # subsubsubsubfolder
+                                if os.path.isdir(sub3folderpath):
+                                    for sub4folder in os.listdir(sub3folderpath):
+                                        sub4folderpath = os.path.join(str(sub3folderpath), str(sub4folder))
+
+                                        # subsubsubsubsubfolder
+                                        if os.path.isdir(sub4folderpath):
+                                            for sub5folder in os.listdir(sub4folderpath):
+                                                sub5folderpath = os.path.join(str(sub4folderpath), str(sub5folder))
+                                        
+                                        elif os.path.isfile(sub4folderpath):
+                                            os.rename(sub4folderpath, sub4folderpath.upper())
+
+
+                                elif os.path.isfile(sub3folderpath):
+                                    os.rename(sub3folderpath, sub3folderpath.upper())
+
+                        elif os.path.isfile(sub2folderpath):
                             #print(subsubfolderpath)
-                            os.rename(subsubfolderpath, subsubfolderpath.upper())
+                            os.rename(sub2folderpath, sub2folderpath.upper())
                         
-                elif os.path.isfile(subfolderpath):
+                elif os.path.isfile(sub1folderpath):
                     #print(subfolderpath)
-                    os.rename(subfolderpath, subfolderpath.upper())
+                    os.rename(sub1folderpath, sub1folderpath.upper())
 
         elif os.path.isfile(folderpath):
             #print(folderpath)
