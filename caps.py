@@ -78,7 +78,9 @@ elif os.path.isfile(path):
 else: 
     print('ERROR: Invalid folder path')    
 
+# -- TO DO: --
 
+# Implement improved version using os.walk()
 
 # manage exceptions
 
