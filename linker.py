@@ -62,7 +62,7 @@ CAD_name = []
 sheet_no = []
 
 linkedworkbook = xlsxwriter.Workbook(filename + '-linked.xlsx')   # Define new workbook for linked version
-linkedworksheet = linkedworkbook.add_worksheet('sheet1')                # Define new worksheet
+linkedworksheet = linkedworkbook.add_worksheet('sheet1')          # Define new worksheet
 # TODO: Get original sheet name and use here
 
 # Set all column widths (Chosen from original)
